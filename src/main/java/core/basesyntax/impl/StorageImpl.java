@@ -5,6 +5,15 @@ import java.util.Objects;
 
 public class StorageImpl<K, V> implements Storage<K, V> {
 
+    private static final int MAX_CAPACITY = 10;
+    private Node<K, V>[] nodes;
+    private int size;
+
+    public StorageImpl() {
+        nodes = new Node[MAX_CAPACITY];
+        size = 0;
+    }
+
     private static class Node<K, V> {
         private K key;
         private V value;
