@@ -26,6 +26,9 @@ public class StorageImpl<K, V> implements Storage<K, V> {
                 current.value = value;
                 return;
             }
+            if (size >= nodes.length) {
+                throw new RuntimeException("Storage is full, cannot add new key");
+            }
         }
         nodes[size] = new Node(key, value);
         size++;
