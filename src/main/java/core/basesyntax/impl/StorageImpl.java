@@ -24,9 +24,6 @@ public class StorageImpl<K, V> implements Storage<K, V> {
         }
     }
 
-    private Node<K, V>[] nodes = new Node[10];
-    private int size = 0;
-
     @Override
     public void put(K key, V value) {
         for (int i = 0; i < size; i++) {
